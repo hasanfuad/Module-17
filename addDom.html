@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Object Model</title>
+    <title>Add Document Object Model</title>
 </head>
 <body>
     <main>
         <section>
          <div class="division">
-            <h1 class="article">First Article</h1>
+            <h1 class="article" id="first-article">First Article</h1>
                 <h3 class="title">Title number One</h3>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequatur vel eius in voluptatum numquam dolorem itaque nulla a culpa.</p>
          </div>
 
          <div class="division">
-            <h1 class="article">First Article</h1>
+            <h1 class="article" id="second-article">First Article</h1>
                 <h3 class="title">Title number One</h3>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequatur vel eius in voluptatum numquam dolorem itaque nulla a culpa.</p>
          </div>
@@ -30,18 +30,17 @@
     </main>
 
     <script>
-        var articles = document.getElementsByClassName("division");
+        var element = document.getElementById('first-article');
+        var newElement = document.createElement('p');
+        newElement.innerHTML = "This is added by Javascript";
+        element.append(newElement);
 
-        for(let i = 0; i < articles.length; i++){
-            var element = articles[i];
+        var second = document.getElementById('second-article');
+        var newElement2 = document.createElement('p');
+        newElement2.innerHTML = "This second element from javascript 2";
+        second.append(newElement2);
 
-            element.innerHTML = "Division- "+i;
-
-            element.style.color= 'green';
-            element.style.backgroundColor = 'lightGray';
-            element.style.padding = "10px";
-            element.style.margin = "20px";
-        }
+        
     </script>
 </body>
 </html>
